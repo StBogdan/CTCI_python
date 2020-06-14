@@ -14,7 +14,7 @@ def gat(arr, point):
 
 def check_square(a, xl, xh, yl, yh, t) -> Optional[tuple]:
     poss = [(x, y) for x in (xl, xh) for y in (yl, yh)]
-    for poz in poss:
+    for poz in poss: 
         if gat(a, poz) == t:
             return poz
 
