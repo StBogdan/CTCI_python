@@ -7,7 +7,7 @@ class Node:
         self. next = next_node
 
     def __str__(self):
-        return f"({self.val}) -> {self.next!r}"
+        return f"({self.val}) -> {self.next}"
 
 
 def link_list_of_list(arr) -> Node:
@@ -17,6 +17,9 @@ def link_list_of_list(arr) -> Node:
         now_elem.next = Node(x)
         now_elem = now_elem.next
     return head
+
+def llol(arr):
+    return link_list_of_list(arr)
 
 
 if __name__ == "__main__":

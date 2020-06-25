@@ -4,3 +4,5 @@ graph_out/
 settings.json
 
 */__pycache__/*
+.DS_Store
+Leet.egg-*/
