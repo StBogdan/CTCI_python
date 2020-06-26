@@ -1,5 +1,7 @@
 ## Cracking the Coding Interview (6th edition)
 
+Exiting Python solutions can be found [here](https://github.com/careercup/CtCI-6th-Edition-Python/tree/e6bc732588601d0a98e5b1bc44d83644b910978d)
+
 ### Current progress
 - Chapter 1: 9/9
 - Chapter 2: some/8

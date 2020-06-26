@@ -18,8 +18,23 @@ def link_list_of_list(arr) -> Node:
         now_elem = now_elem.next
     return head
 
+
 def llol(arr):
     return link_list_of_list(arr)
+
+
+def lllen(head: Node) -> int:
+    return len_of_ll(head)
+
+
+def len_of_ll(head: Node) -> int:
+    count = 0
+    elem_now = head
+    while elem_now:
+        count += 1
+        elem_now = elem_now.next
+
+    return count
 
 
 if __name__ == "__main__":
