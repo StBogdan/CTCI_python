@@ -3,7 +3,7 @@ from typing import List
 
 def rec_prn_builder(left2p, to_close):
     if left2p == 0:
-        return [ [] ]
+        return [[]]
 
     res = []
     if to_close > 0:
