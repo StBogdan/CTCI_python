@@ -1,5 +1,6 @@
 from typing import List
 
+
 class BiNode:
     val: int = None
     left = None
@@ -14,20 +15,43 @@ class BiNode:
         self.right = right
 
 
+class BiPaNode(BiNode):
+    parent = None
+
+
 def ltbt(arr: List[int]) -> BiNode:
     return list_to_binary_tree(arr)
 
 
 def list_to_binary_tree(arr: List[int]) -> BiNode:
-    nodes = [BiNode(arr[0])]
+    nodes = [BiPaNode(arr[0])]
     for i in range(1, len(arr)):
         parent = nodes[(i - 1)//2]
 
-        node_now = BiNode(arr[i])
-        nodes.append(node_now)
-        if (i-1) % 2:
-            parent.right = node_now
+        if not parent and arr[i]:
+            raise Exception(f"Cannot have children without parents to attach to,"
+                            f" for {arr[i]} on input {arr}")
+
+        if not arr[i]:
+            nodes.append(None)
         else:
-            parent.left = node_now
+            node_now = BiPaNode(arr[i])
+            node_now.parent = parent
+
+            nodes.append(node_now)
+            if (i-1) % 2:
+                parent.right = node_now
+            else:
+                parent.left = node_now
 
     return nodes[0]
+
+
+def get_node_by_val(root: BiNode, target):
+    if not root:
+        return None
+    if root.val == target:
+        return root
+    else:
+        return get_node_by_val(root.left, target) \
+            or get_node_by_val(root.right, target)
