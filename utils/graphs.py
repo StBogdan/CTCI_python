@@ -1,6 +1,31 @@
 from typing import List
 
 
+class Vertex:
+
+    def __init__(self, val):
+        self.val = val
+        self.edges = set()
+
+    def __str__(self):
+        return f"Vertex({self.val}) with edges {len(self.edges)}"
+
+
+class Ditex(Vertex):
+
+    def __init__(self, val):
+        self.val = val
+        self.in_edges = set()
+        self.out_edges = set()
+
+    @property
+    def edges(self):
+        return self.in_edges | self.out_edges
+
+    def __str__(self):
+        return f"Ditex({self.val})(in:{len(self.in_edges)})(out:{len(self.out_edges)})"
+
+
 class BiNode:
     val: int = None
     left = None
