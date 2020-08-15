@@ -11,7 +11,7 @@ class Vertex:
         return f"Vertex({self.val}) with edges {len(self.edges)}"
 
 
-class Ditex(Vertex):
+class Ditex(Vertex):  # Directed vertex
 
     def __init__(self, val):
         self.val = val
@@ -27,10 +27,6 @@ class Ditex(Vertex):
 
 
 class BiNode:
-    val: int = None
-    left = None
-    right = None
-
     def __str__(self):
         return f"({self.left if self.left else '_' }/{self.val}\\{self.right if self.right else '_'})"
 
@@ -41,7 +37,10 @@ class BiNode:
 
 
 class BiPaNode(BiNode):
-    parent = None
+
+    def __init__(self, val, left=None, right=None):
+        super().__init__(val, left=left, right=right)
+        self.parent = None
 
 
 def ltbt(arr: List[int]) -> BiNode:
