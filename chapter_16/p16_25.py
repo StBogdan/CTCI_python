@@ -13,23 +13,23 @@ class LRUCache:
         elif len(self._dict) == self.max_size:
             self.evict_lru()
 
-        new_node = CacheNode(key,val)
+        new_node = CacheNode(key, val)
         if self.latest:
             self.latest.right = new_node
         else:
             self.oldest = new_node
-        
+
         new_node.left = self.latest
         self._dict[key] = new_node
         self.latest = new_node
 
         # print(f"Self.latest now is {self.latest}, to it's left {self.latest.left}")
 
-    def get(self,key):
+    def get(self, key):
         if key not in self._dict:
             raise Exception(f"Key {key} not in cache")
 
-        val =  self._dict[key].val
+        val = self._dict[key].val
         self._bump_node(self._dict[key])
         return val
 
@@ -47,29 +47,28 @@ class LRUCache:
         else:
             self.oldest = None
             self.latest = None
-        
+
         del self._dict[oldest_nodes.key]
-        
+
     def _bump_node(self, node):
         # print(f"Bumping node {node}, w/ LEFT: {node.left} and RIGHT {node.right}")
         # print(f"Bumping node in dict: {self._dict[node.left.key] if node.left else 'Nevermind'}")
 
-
         if node != self.latest:
             if node.left:
                 node.left.right = node.right
-            else: # You are the oldest
+            else:  # You are the oldest
                 self.oldest = node.right
-            
+
             # Add to the latest nodes, become latest
             self.latest.right = node
             node.left = self.latest
             self.latest = node
 
-
     def __str__(self):
         return f"LRUCache w/ items: {list(self._dict.items())}, oldest: {self.oldest} , newest: {self.latest}"
-        
+
+
 class CacheNode:
 
     def __init__(self, key, val):
@@ -77,18 +76,18 @@ class CacheNode:
         self.val = val
         self.right = None
         self.left = None
-    
+
     def __str__(self):
         return f"CN(k:{self.key}, v:{self.val})"
 
-    
     def __repr__(self):
         return self.__str__()
+
 
 if __name__ == "__main__":
     lrc = LRUCache(4)
     for i in range(10):
-        lrc.add(i,i)
+        lrc.add(i, i)
         assert lrc.get(i) == i
         print(lrc)
 
@@ -98,6 +97,6 @@ if __name__ == "__main__":
     print(lrc)
     print("-"*50)
 
-    for i in range(10,16):
-        lrc.add(i,i)
+    for i in range(10, 16):
+        lrc.add(i, i)
         print(lrc)
