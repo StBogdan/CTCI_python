@@ -51,7 +51,6 @@ def find_sub_sort(arr: List[int]) -> Tuple[int, int]:
 
     # Expand middle rightwards
     while start_right < n-1 and arr[start_right+1] < mid_max:
-        mid_max = arr[start_right]
         start_right += 1
     # print(f"Expanded right now to: {start_right}")
 
