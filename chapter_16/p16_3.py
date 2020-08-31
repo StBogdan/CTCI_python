@@ -7,20 +7,16 @@ Point = namedtuple("Point", "x y")
 
 def get_line_eq(p1, p2):
     is_vertical = False
-    if p1.x == p2.x and p1.y == p2.y:
+    slope =0
+    if p1 == p2:
         raise Exception("Can't get a line eq for one point")
 
-    if p1.y - p2.y != 0:
-        slope = (p1.x - p2.x) / (p1.y - p2.y)
-
-        if slope == 0:  # Vert line
-            is_vertical = True
-            offset = p1.x
-        else:
-            offset = p1.y - slope*p1.x
+    if p1.x != p2.x:
+        slope = (p1.y - p2.y) / (p1.x - p2.x)
+        offset = p1.y - slope*p1.x
     else:  # Horiz line
-        slope = 0
-        offset = p1.y
+        is_vertical = True
+        offset = p1.x
 
     return (slope, offset, is_vertical)
 
@@ -48,9 +44,9 @@ def get_line_intersection(line_1, line_2):
             vert_line_offset = l1_offset if l1_vert else l2_offset
             norm_line_slope, norm_line_offset = l2_slope, l2_offset if l1_vert else l1_slope, l1_offset
 
-            intersect_x = (vert_line_offset -
-                           norm_line_offset) / norm_line_slope
-            return Point(intersect_x, vert_line_offset)
+            isect_x = vert_line_offset
+            isect_y = isect_x * norm_line_slope + norm_line_offset
+            return Point(isect_x, isect_y)
 
 
 def point_in_segment(p: Point, segment: Tuple[Point, Point]) -> bool:
