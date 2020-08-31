@@ -2,6 +2,7 @@
 
 from typing import List
 
+
 def traverse_pond(matrix: List[List[int]], poz: tuple) -> int:
     x, y = poz
     n = len(matrix)
@@ -36,11 +37,10 @@ def find_pond_sizes(wet_map: List[List[int]]):
 
 if __name__ == "__main__":
     ex_pond = [
-        [0,2,1,0],
-        [0,1,0,1],
-        [1,1,0,1],
-        [0,1,0,1]
+        [0, 2, 1, 0],
+        [0, 1, 0, 1],
+        [1, 1, 0, 1],
+        [0, 1, 0, 1]
     ]
 
     print(f"In my map, pond sizes are: {find_pond_sizes(ex_pond)}")
-
