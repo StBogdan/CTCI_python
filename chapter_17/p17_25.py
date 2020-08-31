@@ -27,10 +27,10 @@ def word_square_helper(all_words_trie:dict,
         if stack_score ==  -1:
             continue
         
-        print(f"For words used {used_words} and {word:20}, got stack score: {stack_score}")
+        # print(f"For words used {used_words} and {word:20}, got stack score: {stack_score}")
 
         if stack_score == len(word):
-            print(f"Got a good one at {used_words} and {word}")
+            # print(f"Got a good one at {used_words} and {word}")
             current_best = used_words + [word]
 
         best_of_rest = word_square_helper(all_words_trie, words_of_len, used_words + [word], new_trie_pointers)

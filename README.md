@@ -5,22 +5,22 @@
 | Nr. 	|         Chapter        	| Done 	| Total 		| Ommited 	|
 |:---:	|:----------------------:	|:----:	|:-----:	|:-------:	|
 |   1 	| [Array and String](chapter_1)       	|   9  	|   9   	|       	|         	|
-|   2 	| [Linked Lists](chapter_2/)           	|   8  	|   8   	|         	|
-|   3 	| [Stacks and Queues](.chapter_3/)      	|   6  	|   6   	|    1    	|
-|   4 	| Trees and Graphs       	|  12  	|   12  	|         	|
-|   5 	| Bit Manipulation       	|   8  	|   8   	|         	|
-|   6 	| Math and Logic Puzzles 	|  10  	|   10  	|    4    	|
-|   7 	| OO Design              	|   0  	|   12  	|         	|
-|   8 	| Recursion and DP       	|  12  	|   14  	|         	|
-|   9 	| System Design          	|   2  	|   8   	|         	|
-|  10 	| Sorting and Searching  	|   9  	|   11  	|    1    	|
-|  11 	| Testing                	|   4  	|   6   	|    4    	|
-|  12 	| C/C++                  	|  11  	|   11  	|    11   	|
-|  13 	| Java                   	|   0  	|   8   	|         	|
-|  14 	| Databases              	|   0  	|   7   	|         	|
-|  15 	| Threads and Locks      	|   0  	|   7   	|         	|
-|  16 	| Moderate               	|  21  	|   26  	|    1    	|
-|  17 	| Hard                   	|  20  	|   26  	|         	|
+|   2 	| [Linked Lists](chapter_2)           	|   8  	|   8   	|         	|
+|   3 	| [Stacks and Queues](chapter_3)      	|   6  	|   6   	|    1    	|
+|   4 	| [Trees and Graphs](chapter_4)       	|  12  	|   12  	|         	|
+|   5 	| [Bit Manipulation](chapter_5)       	|   8  	|   8   	|         	|
+|   6 	| [Math and Logic Puzzles](chapter_6) 	|  10  	|   10  	|    4    	|
+|   7 	| [OO Design](chapter_7)              	|   0  	|   12  	|         	|
+|   8 	| [Recursion and DP](chapter_8)       	|  12  	|   14  	|         	|
+|   9 	| [System Design](chapter_9)          	|   0  	|   8   	|         	|
+|  10 	| [Sorting and Searching](chapter_10) 	|   9  	|   11  	|    1    	|
+|  11 	| [Testing](chapter_11)                	|   4  	|   6   	|    4    	|
+|  12 	| [C/C++](chapter_12)                  	|  11  	|   11  	|    11   	|
+|  13 	| [Java](chapter_13)                   	|   0  	|   8   	|         	|
+|  14 	| [Databases](chapter_14)              	|   0  	|   7   	|         	|
+|  15 	| [Threads and Locks](chapter_15)      	|   0  	|   7   	|         	|
+|  16 	| [Moderate](chapter_16)               	|  21  	|   26  	|    1    	|
+|  17 	| [Hard](chapter_17)                   	|  20  	|   26  	|         	|
 
 
 ### Schedule
