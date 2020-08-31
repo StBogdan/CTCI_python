@@ -1,31 +1,33 @@
-## Cracking the Coding Interview (6th edition)
-
-Exiting Python solutions can be found [officially here](https://github.com/careercup/CtCI-6th-Edition-Python/tree/e6bc732588601d0a98e5b1bc44d83644b910978d) and [user-created here](https://github.com/w-hat/ctci-solutions)
+## Python Solutions to Cracking the Coding Interview (6th edition)
+> Exiting Python solutions can be found [officially here](https://github.com/careercup/CtCI-6th-Edition-Python/tree/e6bc732588601d0a98e5b1bc44d83644b910978d) and [user-created here](https://github.com/w-hat/ctci-solutions)
 
 ### Current progress
-- Chapter 1: 9/9
-- Chapter 2: 6/8
-- Chapter 3: 8/12
-- Chapter 4: 8/8
-- Chapter 5: 1/10
-- Chapter 6: 0/12
-- Chapter 7: 9/14
-- Chapter 8: 0/8
-- Chapter 9: 2/11
-- Chapter 10: 2/11
-- Chapter 11: 0/6
-- Chapter 12: 0/11
-- Chapter 13: 0/8
-- Chapter 14: 0/7
-- Chapter 15: 0/7
-- Chapter 16: 2/26
-- Chapter 17: 4/26
+| Nr. 	|         Chapter        	| Done 	| Total 		| Ommited 	|
+|:---:	|:----------------------:	|:----:	|:-----:	|:-------:	|
+|   1 	| [Array and String](chapter_1)       	|   9  	|   9   	|       	|         	|
+|   2 	| [Linked Lists](chapter_2/)           	|   8  	|   8   	|         	|
+|   3 	| [Stacks and Queues](.chapter_3/)      	|   6  	|   6   	|    1    	|
+|   4 	| Trees and Graphs       	|  12  	|   12  	|         	|
+|   5 	| Bit Manipulation       	|   8  	|   8   	|         	|
+|   6 	| Math and Logic Puzzles 	|  10  	|   10  	|    4    	|
+|   7 	| OO Design              	|   0  	|   12  	|         	|
+|   8 	| Recursion and DP       	|  12  	|   14  	|         	|
+|   9 	| System Design          	|   2  	|   8   	|         	|
+|  10 	| Sorting and Searching  	|   9  	|   11  	|    1    	|
+|  11 	| Testing                	|   4  	|   6   	|    4    	|
+|  12 	| C/C++                  	|  11  	|   11  	|    11   	|
+|  13 	| Java                   	|   0  	|   8   	|         	|
+|  14 	| Databases              	|   0  	|   7   	|         	|
+|  15 	| Threads and Locks      	|   0  	|   7   	|         	|
+|  16 	| Moderate               	|  21  	|   26  	|    1    	|
+|  17 	| Hard                   	|  20  	|   26  	|         	|
 
 
 ### Schedule
 - Week 1: Chapter 4: Graphs and Trees
 - Week 2: Chapter 10: Sorting and Searching
 - Week 3: Chapter 1: Arrays and Strings
+- Week 4: Halted
 
 ### Running the solutions
 
