@@ -11,7 +11,7 @@
 |   5 	| [Bit Manipulation](chapter_5)       	|   8  	|   8   	|         	|
 |   6 	| [Math and Logic Puzzles](chapter_6) 	|  10  	|   10  	|    4    	|
 |   7 	| [OO Design](chapter_7)              	|   0  	|   12  	|         	|
-|   8 	| [Recursion and DP](chapter_8)       	|  12  	|   14  	|         	|
+|   8 	| [Recursion and DP](chapter_8)       	|  14  	|   14  	|         	|
 |   9 	| [System Design](chapter_9)          	|   0  	|   8   	|         	|
 |  10 	| [Sorting and Searching](chapter_10) 	|   9  	|   11  	|    1    	|
 |  11 	| [Testing](chapter_11)                	|   4  	|   6   	|    4    	|
@@ -19,8 +19,8 @@
 |  13 	| [Java](chapter_13)                   	|   0  	|   8   	|         	|
 |  14 	| [Databases](chapter_14)              	|   0  	|   7   	|         	|
 |  15 	| [Threads and Locks](chapter_15)      	|   0  	|   7   	|         	|
-|  16 	| [Moderate](chapter_16)               	|  21  	|   26  	|    1    	|
-|  17 	| [Hard](chapter_17)                   	|  20  	|   26  	|         	|
+|  16 	| [Moderate](chapter_16)               	|  26  	|   26  	|    1    	|
+|  17 	| [Hard](chapter_17)                   	|  26  	|   26  	|         	|
 
 
 ### Schedule
