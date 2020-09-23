@@ -1,5 +1,6 @@
-# Python Solutions to Cracking the Coding Interview (6th edition)
-> Exiting Python solutions can be found [officially here](https://github.com/careercup/CtCI-6th-Edition-Python/tree/e6bc732588601d0a98e5b1bc44d83644b910978d) and [user-created here](https://github.com/w-hat/ctci-solutions)
+# Cracking the Coding Interview (6th edition) Python Solutions
+
+> Existing Python solutions can be found [officially here](https://github.com/careercup/CtCI-6th-Edition-Python/tree/e6bc732588601d0a98e5b1bc44d83644b910978d) and [user-created here](https://github.com/w-hat/ctci-solutions)
 
 ### Current progress
 | Nr. 	|         Chapter        	| Done 	| Total 		| Ommited 	|
@@ -26,7 +27,7 @@
 ### Running the solutions
 
 For convenience, the project has a `setup.py` that specifies a package
-This can be installed locally in the virtualenvironment by using
+This can be installed locally in the python (virtual)environment by using
 ```bash
 pip install -e .
 ```
@@ -50,5 +51,5 @@ For more information, check the [wikipedia link](https://en.wikipedia.org/wiki/L
 ![Example tree](bonus/graphs.png)
 
 This requires graphviz to be installed locally and the extension added to VS Code.   
-The one used in the screenshot can be found [here](https://marketplace.visualstudio.com/items?itemName=tintinweb.graphviz-interactive-preview) 
+The one used in the screenshot above can be found [here](https://marketplace.visualstudio.com/items?itemName=tintinweb.graphviz-interactive-preview).
 
