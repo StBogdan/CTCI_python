@@ -1,9 +1,17 @@
 import string
 from collections import Counter
 
+# Method: Map and check for odds
+# Time: O(n)
+# Space: O(n)
+
+# Method: Character bit-map, check set bits
+# Time: O(n)
+# Space: O(1) (limited by alphabet)
+
 
 def is_palindrom_perm(word: str) -> bool:
-    clean_w = proc(word)
+    clean_w = pre_process(word)
     ctr = Counter(clean_w)
     odd_c = sum(x % 2 for x in ctr.values())
     return not odd_c > 1
@@ -11,19 +19,19 @@ def is_palindrom_perm(word: str) -> bool:
 
 def is_palindrome_perm_better(word: str) -> bool:
     bs = {c: 0b0 for c in string.ascii_lowercase}
-    for c in proc(word):
+    for c in pre_process(word):
         bs[c] ^= 0b1  # Flip by xor with one
     return not sum(x for x in bs.values()) > 1
 
 
-def proc(x: str) -> str:
+def pre_process(x: str) -> str:
     # x.translate(string.maketrans("","",string.punctuation))
     letter_iter = filter(lambda c: c.isalpha(), x.strip())
     return "".join(map(lambda x: x.lower(), letter_iter))
 
 
 if __name__ == "__main__":
-    print(proc("a...!>!>!a<<>  <!!!aaa"))
+    print(pre_process("a...!>!>!a<<>  <!!!aaa"))
 
     def printex(ex): return print(
         f"For exampple: {ex} ==> {is_palindrom_perm(ex)} \

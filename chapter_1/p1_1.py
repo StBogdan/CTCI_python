@@ -1,5 +1,14 @@
 from collections import Counter
 
+# Method: Character map
+# Time: O(n)
+# Space: O(n)
+
+# Follow-up
+# Method: Sort and compare
+# Time: O(n*log(n))
+# Space: O(n)
+
 
 def all_uniqs(input_str: str):
     ctr = Counter(input_str)
@@ -24,4 +33,5 @@ if __name__ == "__main__":
     inputs = ["", "aaasodkc", "abbccdcss", "aaa", "b", "bdes"]
 
     for x in inputs:
-        print(f"Input {x} result: {all_uniqs(x)} same as {all_uniqs_no_datastruct(x)}")
+        print(
+            f"Input {x} result: {all_uniqs(x)} same as {all_uniqs_no_datastruct(x)}")

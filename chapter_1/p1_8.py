@@ -1,47 +1,51 @@
 from typing import List
 
+# Method: Individual cell checks, with handling of first line and col
+# Time: O(n*m)
+# Space: O(1)
+
 
 def zero_m(matric: List[List[int]]):
-    n, m = len(matric), len(matric[0])
+    rows, cols = len(matric), len(matric[0])
     fcol0 = False
     frow0 = False
 
-    for i in range(n):
-        if matric[i][0] == 0:
+    for r in range(rows):
+        if matric[r][0] == 0:
             fcol0 = True
             break
 
-    for j in range(m):
-        if matric[0][j] == 0:
+    for c in range(cols):
+        if matric[0][c] == 0:
             frow0 = True
             break
 
-    for i in range(n):
-        for j in range(m):
-            if matric[i][j] == 0:
-                matric[i][0] = 0
-                matric[0][j] = 0
+    for r in range(rows):
+        for c in range(cols):
+            if matric[r][c] == 0:
+                matric[r][0] = 0
+                matric[0][c] = 0
 
     print(f"Gonna zero now, first row {frow0} and first col {fcol0}")
     mrint(matric)
 
-    for i in range(1, n):
-        if matric[i][0] == 0:
-            for j in range(m):
-                matric[i][j] = 0
+    for r in range(1, rows):
+        if matric[r][0] == 0:
+            for c in range(cols):
+                matric[r][c] = 0
 
-    for j in range(1, m):
-        if matric[0][j] == 0:
-            for i in range(n):
-                matric[i][j] = 0
+    for c in range(1, cols):
+        if matric[0][c] == 0:
+            for r in range(rows):
+                matric[r][c] = 0
 
     if fcol0:
-        for i in range(n):
-            matric[i][0] = 0
+        for r in range(rows):
+            matric[r][0] = 0
 
     if frow0:
-        for j in range(m):
-            matric[0][j] = 0
+        for c in range(cols):
+            matric[0][c] = 0
 
     return matric
 

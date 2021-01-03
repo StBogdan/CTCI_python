@@ -1,5 +1,9 @@
 from typing import List
 
+# Method: Recursive edge-walking
+# Time: O(n*m), where n,m the dimensions of the matrix
+# Space: O(1)
+
 
 def rotate(arr: List[List[int]]) -> List[List[int]]:
     rot_help(arr, 0, len(arr[0])-1, 0, len(arr)-1)

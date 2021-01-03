@@ -1,15 +1,19 @@
 from typing import List
 
+# Method: Count spaces, move into place from the end
+# Time: O(n)
+# Space: O(1)
+
 
 def urlize(a: List[chr], true_len):
     ei = true_len - 1
 
-    nr_s = 0
+    nr_spaces = 0
     for i in range(true_len):
         if a[i] == " ":
-            nr_s += 1
+            nr_spaces += 1
 
-    ei = true_len - 1 - (nr_s//3) * 2
+    ei = true_len - 1 - (nr_spaces//3) * 2
     # print(f"Turns out the string starts at {ei}")
     end_i = true_len-1
     while ei >= 0:
@@ -26,7 +30,9 @@ def urlize(a: List[chr], true_len):
     return "".join(a)
 
 
-def get_prob_input(str_w_spaces: str):
+def get_prob_input(str_w_spaces: str) -> str:
+    """Add the necessary buffer at the end, for a normal str
+    """
     spaces = str_w_spaces.count(" ")
     return str_w_spaces + " " * (spaces * 2), len(str_w_spaces) + spaces*2
 
@@ -41,4 +47,3 @@ if __name__ == "__main__":
 
     a, fn = get_prob_input(" a c    a    c")
     print(f"Input is |{a}|, result |{urlize(list(a), fn)}| ")
-

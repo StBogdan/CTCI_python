@@ -1,3 +1,7 @@
+# Method: Char by char check, count differences
+# Time: O(min(n,m)), where n,m the lenghts of the input strings
+# Space: O(1)
+
 
 def is_edit(a: str, b: str) -> bool:
     la = len(a)
@@ -17,28 +21,28 @@ def check_edit(a: str, b: str) -> bool:
     lb = len(b)
     i = 0
     j = 0
-    mm = 0
+    mismatches = 0
 
     while i < la and j < lb:
         if a[i] == b[j]:
             i += 1
         else:
-            mm += 1
+            mismatches += 1
         j += 1
 
-        if mm > 1:
+        if mismatches > 1:
             return False
 
     return abs(i-j) <= 1
 
 
 def check_subst(a, b) -> bool:
-    mm = 0
+    mistmatches = 0
 
     for i in range(len(a)):
         if a[i] != b[i]:
-            mm += 1
-        if mm > 1:
+            mistmatches += 1
+        if mistmatches > 1:
             return False
 
     return True

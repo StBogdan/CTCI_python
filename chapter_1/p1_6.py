@@ -1,18 +1,23 @@
-def basic_compr(a: str) -> str:
-    cl = 0
-    n = len(a)
+# Method: Build new, counting occurences
+# Time: O(n)
+# Space: O(n)
+
+
+def basic_compr(input_str: str) -> str:
+    len_compres = 0
+    len_orig = len(input_str)
     res = []
 
     prev = None
     prev_count = 0
-    for c in a:
+    for c in input_str:
         if c != prev:
             if prev:
                 res.append(prev)
                 res.append(str(prev_count))
-                cl += 1 + len(str(prev_count))
-                if cl > n:
-                    return a
+                len_compres += 1 + len(str(prev_count))
+                if len_compres > len_orig:
+                    return input_str
             prev = c
             prev_count = 1
         else:
@@ -21,9 +26,9 @@ def basic_compr(a: str) -> str:
     res.append(prev)
     res.append(str(prev_count))
 
-    cl += 1 + len(str(prev_count))
+    len_compres += 1 + len(str(prev_count))
 
-    return a if cl > n else "".join(res)
+    return input_str if len_compres > len_orig else "".join(res)
 
 
 if __name__ == "__main__":

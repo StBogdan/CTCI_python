@@ -1,5 +1,9 @@
 from collections import Counter
 
+# Method: Sort and compare
+# Time: O(n*log(n))
+# Space: O(n)
+
 
 def check_perm(a: str, b: str):
     sa = sorted(a)
