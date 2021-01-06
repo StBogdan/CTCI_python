@@ -1,25 +1,29 @@
 from chapter_2.linked_list_utils import Node, link_list_of_list, lllen, llol
 
+# Method: Find total lenght, walk together until meet
+# Time: O(n)
+# Space: O(1)
+
 
 def get_intersecting_node(h1: Node, h2: Node):
-    ll1 = lllen(h1)
-    ll2 = lllen(h2)
+    len_ll1 = lllen(h1)
+    len_ll2 = lllen(h2)
 
     if get_last_of_ll(h1) != get_last_of_ll(h2):
         return None
 
-    if ll1 > ll2:
-        sl = h2
-        bl = h1
+    if len_ll1 > len_ll2:
+        short_ll = h2
+        longer_ll = h1
     else:
-        sl = h1
-        bl = h2
+        short_ll = h1
+        longer_ll = h2
 
-    bl = adjust(bl, abs(ll1 - ll2))
-    while bl != sl:
-        bl = bl.next
-        sl = sl.next
-    return bl.val
+    longer_ll = adjust(longer_ll, abs(len_ll1 - len_ll2))
+    while longer_ll != short_ll:
+        longer_ll = longer_ll.next
+        short_ll = short_ll.next
+    return longer_ll.val
 
 
 def adjust(head: Node, jumps):

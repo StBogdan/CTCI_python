@@ -2,7 +2,7 @@
 
 > Existing Python solutions can be found [officially here](https://github.com/careercup/CtCI-6th-Edition-Python/tree/e6bc732588601d0a98e5b1bc44d83644b910978d) and [user-created here](https://github.com/w-hat/ctci-solutions)
 
-### Current progress
+## Current progress
 | Nr. 	|         Chapter        	| Done 	| Total 		| Ommited 	| Notes |
 |:---:	|:----------------------:	|:----:	|:-----:	|:-------:	| :-------:	 |
 |   1 	| [Array and String](chapter_1)       	|   9  	|   9   	|       	|         	| |
@@ -24,15 +24,15 @@
 |  17 	| [Hard](chapter_17)                   	|  26  	|   26  	|         	| |
 
 
-### Running the solutions
+## Running the solutions
 
-For convenience, the project has a `setup.py` that specifies a package
-This can be installed locally in the python (virtual)environment by using
+For convenience, the project has a `setup.py` that specifies a package, for local path resolving.   
+This can be installed locally in the python (virtual)environment by using:
 ```bash
 pip install -e .
 ```
 
-Problems can be run by running the file, most should have a main method.
+Problems can be run by running the file, most should have a main method with some sample input, e.g. :
 ```bash
 python p16_20.py
 ```

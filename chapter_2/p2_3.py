@@ -1,5 +1,9 @@
 from chapter_2.linked_list_utils import llol, Node
 
+# Method: Identity theft
+# Time: O(1)
+# Space: O(1)
+
 
 def remove_mid(mid_node: Node):
     victim = mid_node.next

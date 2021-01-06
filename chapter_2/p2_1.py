@@ -1,5 +1,13 @@
 from chapter_2.linked_list_utils import Node, llol
 
+# Method: Use a set
+# Time: O(n)
+# Space: O(n)
+
+# Method (no buffer): Pick one, try to find in rest of linked list
+# Time: O(n^2)
+# Space: O(1)
+
 
 def remove_dups_ll(head: Node):
     seen = set()
@@ -13,18 +21,18 @@ def remove_dups_ll(head: Node):
         head = head.next
 
 
-def remove_dups_nobuf(h: Node):
-    rc = h
+def remove_dups_nobuf(head: Node):
+    rc = head
     while rc:
         target = rc.val
         prev = rc
-        restp = rc.next
-        while restp:
-            if restp.val == target:
-                prev.next = restp.next
+        rest_ptr = rc.next
+        while rest_ptr:
+            if rest_ptr.val == target:
+                prev.next = rest_ptr.next
             else:
-                prev = restp
-            restp = restp.next
+                prev = rest_ptr
+            rest_ptr = rest_ptr.next
         rc = rc.next
 
 

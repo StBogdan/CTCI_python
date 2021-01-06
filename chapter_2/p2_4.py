@@ -1,5 +1,9 @@
 from chapter_2.linked_list_utils import llol, Node
 
+# Method: Construct 2 other lists
+# Time: O(n)
+# Space: O(1)
+
 
 def part_around(x: int, head: Node):
     low_head = None

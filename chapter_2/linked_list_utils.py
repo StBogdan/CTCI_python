@@ -20,6 +20,8 @@ def link_list_of_list(arr) -> Node:
 
 
 def llol(arr):
+    """Shorthand for (make) linked-list of list
+    """
     return link_list_of_list(arr)
 
 

@@ -1,38 +1,42 @@
 from chapter_2.linked_list_utils import Node, llol
 
+# Method: Slow/Fast pointer, push to stack second half and check
+# Time: O(n)
+# Space: O(n)
 
-def check_ll_palindrome(h: Node):
-    sl_len = -1
-    fst_len = -1
 
-    if not h:
+def check_ll_palindrome(head: Node):
+    slow_len = -1
+    fast_len = -1
+
+    if not head:
         return True
 
-    slp = h
-    fstp = h
+    slow_ptr = head
+    fast_ptr = head
     stack = []
-    while fstp:
-        sl_len += 1
-        fst_len += 2
-        stack.append(slp.val)
+    while fast_ptr:
+        slow_len += 1
+        fast_len += 2
+        stack.append(slow_ptr.val)
 
-        slp = slp.next
-        fstp = fstp.next
+        slow_ptr = slow_ptr.next
+        fast_ptr = fast_ptr.next
 
-        if fstp:
-            fstp = fstp.next
-            if not fstp:
-                fst_len += 1
+        if fast_ptr:
+            fast_ptr = fast_ptr.next
+            if not fast_ptr:
+                fast_len += 1
 
-    if fst_len > 0 and fst_len % 2:
+    if fast_len > 0 and fast_len % 2:
         stack.pop()
 
-    print(f"Stack is {stack}, slp is {slp}")
+    print(f"Stack is {stack}, slp is {slow_ptr}")
 
-    while slp:
-        if slp.val != stack.pop():
+    while slow_ptr:
+        if slow_ptr.val != stack.pop():
             return False
-        slp = slp.next
+        slow_ptr = slow_ptr.next
 
     return not stack
 

@@ -1,5 +1,8 @@
 from chapter_2.linked_list_utils import Node
 
+# Method: Fast/Slow pointer to meeting, restart pointer at beginning
+# Time: O(n)
+# Space: O(1)
 
 def get_first_loop_elem(h: Node):
     if not h.next:

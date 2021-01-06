@@ -1,5 +1,15 @@
 from chapter_2.linked_list_utils import Node, lllen, llol
 
+# Backward oder (head at least significant)
+# Method: Digit by digit, with carry
+# Time: O(n)
+# Space: O(n) (Constant if you overwrite one of the inputs)
+
+# Forward order
+# Method: Pad to len, recurse down
+# Time: O(n)
+# Space: O(n)
+
 
 def sum_ll(tl1: Node, tl2: Node):
     nl = None
