@@ -1,3 +1,8 @@
+
+# Method: Bitwise addition, recurse with carry
+# Time: O(log(n))
+# Space: O(log(n))
+
 def add_overfill(left, res, ctr, carry):
     while left:
         # print(f"Diggin into {left:b}, resutl now {res:b}")
@@ -84,11 +89,13 @@ if __name__ == "__main__":
     # exs = [(0b1011, 0b1011)]
     fails = 0
     for a, b in exs:
-        if add_no_alg(a, b) != a+b or add_no_alg_better(a,b) != a+b:
+        if add_no_alg(a, b) != a + b or add_no_alg_better(a, b) != a + b:
             print(
-                f"Result\t{add_no_alg(a,b):b},\nsame as\t{(a+b):b} ? {add_no_alg(a,b) == a+b}, for inputs {a:b} and {b:b}")
+                f"Result\t{add_no_alg(a,b):b}," 
+                f"same as\t{(a+b):b} ? {add_no_alg(a,b) == a+b}, for inputs {a:b} and {b:b}"
+            )
             fails += 1
-            print("*"*50)
+            print("*" * 50)
         else:
             # print(f"Good for {a} and {b}")
             pass

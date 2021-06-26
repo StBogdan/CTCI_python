@@ -1,5 +1,9 @@
 import random
 
+# Method: Reservoir sampling
+# Time: O(n)
+# Space: O(m)
+
 
 def get_subset(arr, m):
     if m >= len(arr):

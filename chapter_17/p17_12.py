@@ -1,3 +1,10 @@
+from typing import Tuple
+
+# Method: Recursive call, returning left and right edges of result linked list
+# Time: O(n)
+# Space: O(d)
+# Where d = depth of BST
+
 
 class BiNode:
     def __init__(self, val):
@@ -11,9 +18,10 @@ def flatten_binary_tree(root: BiNode):
     return left_side
 
 
-def flat_helper(root: BiNode) -> tuple:
+def flat_helper(root: BiNode) -> Tuple[BiNode, BiNode]:
     left_edge = root
     right_edge = root
+
     if root.node1:
         left_edge_left, left_edge_right = flat_helper(root.node1)
 
@@ -21,6 +29,7 @@ def flat_helper(root: BiNode) -> tuple:
         left_edge_right.node2 = root
 
         left_edge = left_edge_left
+
     if root.node2:
         right_edge_left, right_edge_right = flat_helper(root.node2)
 
@@ -31,11 +40,6 @@ def flat_helper(root: BiNode) -> tuple:
 
     return (left_edge, right_edge)
 
-
-#	20
-#  10       25
-# 5        22
-#	  21   23
 
 if __name__ == "__main__":
     root = BiNode(20)

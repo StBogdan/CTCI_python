@@ -1,3 +1,7 @@
+# Method: Store seen letter/number balances (the first location)
+# Time: O(n)
+# Space: O(n)
+
 
 def longest_subarr_number_letter_equal(arr: str) -> int:
     more_letters_now = 0
@@ -19,7 +23,7 @@ def longest_subarr_number_letter_equal(arr: str) -> int:
             max_arr_now = i - seen_offsets[more_letters_now]
             if max_arr_now > max_arr_size:
                 max_arr_size = max_arr_now
-                max_arr_indexes = (seen_offsets[more_letters_now]+1, i)
+                max_arr_indexes = (seen_offsets[more_letters_now] + 1, i)
         else:
             seen_offsets[more_letters_now] = i
 
@@ -27,13 +31,10 @@ def longest_subarr_number_letter_equal(arr: str) -> int:
 
 
 if __name__ == "__main__":
-    exs = [
-        "aaa2222aa22aa222aaaa",
-        "aaa222aa",
-        "e4ee2a2a2a",
-        "z0123456789a"
-    ]
+    exs = ["aaa2222aa22aa222aaaa", "aaa222aa", "e4ee2a2a2a", "z0123456789a"]
     for ex_arr in exs:
         max_arr, (start, end) = longest_subarr_number_letter_equal(ex_arr)
-        print(f"Max arr with eq is of len {max_arr}, "
-              f"namely: {ex_arr[start:end+1]}, from {ex_arr}")
+        print(
+            f"Max arr with eq is of len {max_arr}, "
+            f"namely: {ex_arr[start:end+1]}, from {ex_arr}"
+        )

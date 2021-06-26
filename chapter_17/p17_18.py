@@ -1,6 +1,9 @@
-
 from typing import List
 from collections import defaultdict
+
+# Method: Two pointer, keep track of elements
+# Time: O(l)
+# Space: O(s)
 
 
 def longest_superseq(longer: List[int], shorter: List[int]) -> List[int]:
@@ -40,9 +43,11 @@ def longest_superseq(longer: List[int], shorter: List[int]) -> List[int]:
 if __name__ == "__main__":
     exs = [
         ([1, 5, 9], [7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7]),
-        ([1, 2, 3], [1, 1, 2, 2, 2, 3, 3, 9, 9, 2, 1, 1, 3])
+        ([1, 2, 3], [1, 1, 2, 2, 2, 3, 3, 9, 9, 2, 1, 1, 3]),
     ]
 
     for shorter, longer in exs:
-        print(f"Between {longest_superseq(longer,shorter)}, "
-              f"you will find {shorter} in {longer}")
+        print(
+            f"Between {longest_superseq(longer,shorter)}, "
+            f"you will find {shorter} in {longer}"
+        )

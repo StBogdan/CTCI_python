@@ -1,11 +1,20 @@
-
 from typing import Tuple, List
 from utils.graphs import Vertex
 
 
-def get_truename_occurences(names_list: List[tuple], name_pairs: List[tuple]) -> List[tuple]:
-    name_dict = { name : Vertex((name,occ)) for name, occ in names_list}
+# Method: Build graph, DFS
+# Time: O(V + E)
+# Space: O(V + E)
+# Notes:    V = vertexes, nr of names
+#           E = edges, nr of name equivalencies
 
+
+def get_truename_occurences(
+    names_list: List[tuple], name_pairs: List[tuple]
+) -> List[tuple]:
+    name_dict = {name: Vertex((name, occ)) for name, occ in names_list}
+
+    # Build graph
     for name1, name2 in name_pairs:
         if name1 not in name_dict or name2 not in name_dict:
             continue
@@ -15,6 +24,7 @@ def get_truename_occurences(names_list: List[tuple], name_pairs: List[tuple]) ->
     seen_nodes = set()
     name_totals = {}
 
+    # DFS on the other names
     for name, name_vertex in name_dict.items():
         if name in seen_nodes:
             continue
@@ -34,9 +44,18 @@ def traverse_connected_names(vertex: Vertex, seen: set) -> int:
 
 
 if __name__ == "__main__":
-    ex_names = [("John", 15), ("Jon", 12), ("Chris", 13),
-                ("Kris", 4), ("Christopher", 19)]
-    ex_pairs = [("John", "Jon"), ("John", "Johny"),
-                ("Chris", "Kris"), ("Chris", "Christopher")]
+    ex_names = [
+        ("John", 15),
+        ("Jon", 12),
+        ("Chris", 13),
+        ("Kris", 4),
+        ("Christopher", 19),
+    ]
+    ex_pairs = [
+        ("John", "Jon"),
+        ("John", "Johny"),
+        ("Chris", "Kris"),
+        ("Chris", "Christopher"),
+    ]
 
     print(f"True counts are {get_truename_occurences(ex_names, ex_pairs)}")

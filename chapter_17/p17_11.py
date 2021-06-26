@@ -1,12 +1,22 @@
-# idea: Reverse index
-
-# create mapping from key: word , value: sorted set of occurences (count words in book)
-
-# when looking for shortest distance between 2 words, run 2 pointers in the sorted arr, find min diff
 import re
 from typing import List
 from collections import defaultdict
 import os
+
+# Method: Index occurences, run through 2 sorted occurence lists
+# Time: O(w*o + max(o))
+# Space: O(w*o)
+# Notes: o = nr of occurences of a word, max(o) = **the** most frequent word
+
+# Idea: Reverse index
+# create mapping from
+#  key: word ,
+#  value: sorted set of occurences
+# (count words in book)
+
+# when looking for shortest distance between 2 words,
+# run 2 pointers in the sorted arr,
+# find min diff
 
 
 def build_reverse_index(words: List[str]):
@@ -24,7 +34,7 @@ def get_min_interword_distance(w1: str, w2: str, rev_index: dict):
     if not occ_w1 or not occ_w2:
         raise Exception("Not all words present")
 
-    min_sum = float('inf')
+    min_sum = float("inf")
     p1 = 0
     p2 = 0
     while p1 < len(occ_w1) and p2 < len(occ_w2):
@@ -42,8 +52,7 @@ def get_min_interword_distance(w1: str, w2: str, rev_index: dict):
 
 if __name__ == "__main__":
     with open(os.path.join("utils", "lorem_ipsum.txt")) as words_source:
-        all_non_empty_words = filter(
-            bool, re.split(" |\n|\.", words_source.read()))
+        all_non_empty_words = filter(bool, re.split(" |\n|\.", words_source.read()))
         all_text = list(map(lambda x: x.lower(), all_non_empty_words))
 
     reverse_index = build_reverse_index(all_text)
@@ -53,5 +62,7 @@ if __name__ == "__main__":
     ]
 
     for w1, w2 in exs:
-        print(f"Shortest distance b/t {w1} and {w2}"
-              f" at {get_min_interword_distance(w1,w2, reverse_index)}")
+        print(
+            f"Shortest distance b/t {w1} and {w2}"
+            f" at {get_min_interword_distance(w1,w2, reverse_index)}"
+        )

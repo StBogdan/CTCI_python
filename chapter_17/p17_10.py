@@ -1,23 +1,28 @@
 from typing import List
 
+# Method: If there is a majority element, it's going to have enough buget to displace all others
+# Time: O(n)
+# Space: O(1)
+
 
 def majority_elem(arr):
     candidate = maj_elem(arr)
     return candidate if is_majority(candidate, arr) else -1
 
 
-def is_majority(x, arr):
+def is_majority(x: int, arr: List[int]) -> bool:
     count = 0
     for elem in arr:
-        count += (elem == x)
+        count += elem == x
     print(f"Count is {count}")
-    return count > len(arr)/2
+    return count > len(arr) / 2
 
 
 def maj_elem(arr: List[int]) -> int:
     elem_now = arr[1]
     count = 1
-    for x in arr[1:]:
+    for i in range(1, len(arr)):
+        x = arr[i]
         if x == elem_now:
             count += 1
         else:
